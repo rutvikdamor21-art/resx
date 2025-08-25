@@ -1,0 +1,61 @@
+This file contains the complete, corrected code for both of your build.gradle files.
+
+================================================================
+==  PART 1: Code for your TOP-LEVEL build.gradle file        ==
+================================================================
+
+Please replace the ENTIRE content of your top-level build.gradle file with the code below:
+
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    ext.kotlin_version = '1.8.20'
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        // This block is for build tool dependencies only.
+        // The incorrect Hibernate dependency has been removed.
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+
+================================================================
+==  PART 2: Code for your MODULE-LEVEL app/build.gradle file  ==
+================================================================
+
+Please find your app/build.gradle file and add the Hibernate dependency inside the 'dependencies' block as shown in this example.
+
+// --- Example app/build.gradle ---
+plugins {
+    // Your plugins should be here, for example:
+    // id 'com.android.application'
+    // id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    // Your existing android config should be here...
+}
+
+dependencies {
+    // Your other dependencies should be here...
+
+    // Add this block for Hibernate:
+    implementation('org.hibernate:hibernate:3.1') {
+        version {
+            strictly '3.1'
+        }
+        exclude group: 'cglib', module: 'cglib'
+    }
+}

@@ -1,0 +1,28 @@
+// This is the content for your MODULE-LEVEL build.gradle file (e.g., app/build.gradle)
+
+// The 'plugins' and 'android' blocks should already exist in your file.
+// Do not delete them.
+//
+// The important change is inside the 'dependencies' block.
+
+dependencies {
+    // Your other dependencies, like for AndroidX, should be here.
+    // For example:
+    // implementation 'androidx.core:core-ktx:1.12.0'
+    // implementation 'androidx.appcompat:appcompat:1.6.1'
+
+
+    // --- START: Add the corrected Hibernate dependency here ---
+    implementation('org.hibernate:hibernate:3.1') {
+        // Force a specific version
+        version {
+            strictly '3.1'
+        }
+        // Exclude a transitive dependency
+        exclude group: 'cglib', module: 'cglib'
+    }
+    // --- END: Add the corrected Hibernate dependency here ---
+
+
+    // Any other dependencies would also go here.
+}

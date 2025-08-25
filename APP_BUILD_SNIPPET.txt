@@ -1,0 +1,11 @@
+// This is the snippet you need to add to your MODULE-LEVEL build.gradle file (the one in the `app` folder).
+// Add this code inside the `dependencies { ... }` block.
+
+implementation('org.hibernate:hibernate:3.1') {
+    // Force a specific version
+    version {
+        strictly '3.1'
+    }
+    // Exclude a transitive dependency
+    exclude group: 'cglib', module: 'cglib'
+}

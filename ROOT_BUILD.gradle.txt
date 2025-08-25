@@ -1,0 +1,26 @@
+// This is the corrected content for your TOP-LEVEL build.gradle file
+
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        // Classpath for build tools and plugins go here.
+        // For example: classpath 'com.android.tools.build:gradle:8.0.0'
+        //
+        // IMPORTANT: Application libraries like Hibernate should NOT be here.
+        // The incorrect dependency has been removed from this block.
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
