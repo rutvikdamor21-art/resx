@@ -4,101 +4,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
     tools:context=".MainActivity">
 
-    <com.google.android.material.switchmaterial.SwitchMaterial
-        android:id="@+id/service_switch"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Show Speed in Notification Bar"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/display_options_label"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="Display Options"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/service_switch" />
-
-    <RadioGroup
-        android:id="@+id/display_mode_group"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/display_options_label">
+        app:layout_constraintTop_toTopOf="parent">
 
-        <RadioButton
-            android:id="@+id/radio_both"
+        <Button
+            android:id="@+id/player_vs_ai_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Show Download &amp; Upload Speed" />
+            android:text="Player vs. AI" />
 
-        <RadioButton
-            android:id="@+id/radio_download"
+        <Button
+            android:id="@+id/player_vs_player_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Show Only Download Speed" />
+            android:layout_marginTop="16dp"
+            android:text="Player vs. Player (Same Device)" />
 
-        <RadioButton
-            android:id="@+id/radio_upload"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Show Only Upload Speed" />
-    </RadioGroup>
-
-    <TextView
-        android:id="@+id/unit_options_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="Speed Unit"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/display_mode_group" />
-
-    <RadioGroup
-        android:id="@+id/unit_group"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/unit_options_label">
-
-        <RadioButton
-            android:id="@+id/radio_MBs"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="MB/s (Megabytes/sec)" />
-
-        <RadioButton
-            android:id="@+id/radio_Mbs"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Mb/s (Megabits/sec)" />
-
-        <RadioButton
-            android:id="@+id/radio_KBs"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="KB/s (Kilobytes/sec)" />
-
-        <RadioButton
-            android:id="@+id/radio_Kbs"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="kb/s (Kilobits/sec)" />
-    </RadioGroup>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
